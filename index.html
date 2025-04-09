@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget</title>
+    <style>
+      body {
+        --color-background: #fafafa;
+        --color-foreground: #1f2023;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          --color-background: #1f2023;
+          --color-foreground: #efefef;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <button class="button-dark-mode" onclick="myFunction()">dark mode</button> -->
+    <!-- <script>
+      function myFunction() {
+        let element = document.body;
+        element.classList.toggle("dark-body");
+        let widget = document.getElementById("root");
+        widget.classList.toggle("dark-mode");
+      }
+    </script> -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
