@@ -16,7 +16,7 @@ const NewsCarousel = () => {
   useEffect(() => {
     const fetchNews = async () => {
       const response = await fetch(
-        `https://newsdata.io/api/1/news?apikey=pub_7930582cec3487f57ce189aa63b495ea26c20&q=apple`
+        `https://newsdata.io/api/1/news?apikey=pub_7930568c13a026c1752139355a26b8672f0ee&q=apple`
       );
       if (!response.ok) {
         throw new Error("Something went wrong");

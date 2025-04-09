@@ -18,7 +18,12 @@ const PriceCard = () => {
     };
     ws.onerror = (error: any) => console.error("websocket error:", error);
     ws.onclose = () => console.log("websocket closed");
-    return () => ws.close();
+    return () => {
+      if (ws.readyState === 1) {
+        // <-- This is important
+        ws.close();
+      }
+    };
   }, []);
   return (
     <div className=" h-16 text-center col-span-4 col-start-6">
