@@ -11,7 +11,7 @@ const PriceCard = () => {
   const [price, setPrice] = useState<number | null>(null);
   const theme = useTheme() as MyDefaultTheme;
   useEffect(() => {
-    const ws = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@ticker");
+    const ws = new WebSocket("wss://api.gemini.com/v1/marketdata/BTCUSD");
     ws.onmessage = (event: any) => {
       const data = JSON.parse(event.data);
       setPrice(parseFloat(data.c)); //current price

@@ -9,10 +9,10 @@ const NewsDetailed = () => {
     queryKey: ["newsDetail", { id }],
     queryFn: () =>
       fetch(
-        `https://newsapi.org/v2/everything?q=apple&from=2025-03-11&to=2025-03-11&sortBy=popularity&apiKey=fb356b3158af4fed9360bdf1120da1d5`
+        `https://newsdata.io/api/1/news?apikey=pub_7930582cec3487f57ce189aa63b495ea26c20&q=apple`
       ).then((res) => res.json()),
   });
-  const selectedArticle = data?.articles?.[index];
+  const selectedArticle = data?.results?.[index];
   return (
     <div className="p-5">
       {isLoading && <Progress value={33} className="mt-5 w-100 ml-120" />}
@@ -23,10 +23,6 @@ const NewsDetailed = () => {
         <div>
           <h2 className="text-2xl font-bold">{selectedArticle.title}</h2>
           <p className="text-sm text-gray-500">{selectedArticle.description}</p>
-          <div className="mt-4">
-            <h4 className="font-semibold">Content:</h4>
-            <p>{selectedArticle.content}</p>
-          </div>
         </div>
       ) : (
         <p className="text-red-500 text-center">oops</p>
