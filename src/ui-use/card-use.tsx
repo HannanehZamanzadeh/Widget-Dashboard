@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../components/ui/card";
 export type CardProps = {
   title?: string;
   description?: string;

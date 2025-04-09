@@ -5,7 +5,7 @@ import NasaCard from "../API/nasaApi";
 import PriceCard from "../API/cryptoApi";
 import DragAndDrop from "../components/dragAndDrop";
 import Toggle from "../components/toggle";
-import useDarkMode from "../components/darkMode";
+import useLightMode from "../components/darkMode";
 import ClockDashboard from "../components/clockDashboard";
 import {
   GloablStyles,
@@ -13,7 +13,6 @@ import {
   darkTheme,
 } from "../components/globalStyles";
 import { ThemeProvider } from "styled-components";
-
 const RootLayOut = () => {
   const initialWidgets = [
     { id: 1, content: <WeatherWidget />, x: 10, y: 10 },
@@ -34,7 +33,7 @@ const RootLayOut = () => {
       )
     );
   };
-  const [theme, toggleTheme] = useDarkMode();
+  const [theme, toggleTheme] = useLightMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   return (

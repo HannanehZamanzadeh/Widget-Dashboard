@@ -7,7 +7,7 @@ const DraggableItem = ({ item, moveWidget }: any) => {
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
-    end: (dropResult, monitor) => {
+    end: (_, monitor) => {
       const delta = monitor.getDifferenceFromInitialOffset();
       if (delta) {
         moveWidget(item.id, delta.x, delta.y);
