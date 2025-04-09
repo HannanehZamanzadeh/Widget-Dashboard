@@ -26,6 +26,8 @@ const NewsCarousel = () => {
           throw new Error("Unable to fetch news.");
         }
         const data = await response.json();
+        console.log(data);
+
         setNews(data.articles);
         setLoading(false); // وقتی داده‌ها بارگذاری شدند
       } catch (error) {
